@@ -308,6 +308,20 @@ module Bindings (F : Cstubs.FOREIGN) = struct
 
     let ml_eigen_print = foreign "c_eigen_spmat_s_print" (ptr c_spmat_s @-> returning void)
 
+    let ml_eigen_sparse_LU = foreign "c_eigen_spmat_s_sparse_LU" (ptr c_spmat_s @-> ptr c_spmat_s @-> returning (ptr_opt c_spmat_s))
+
+    let ml_eigen_sparse_QR = foreign "c_eigen_spmat_s_sparse_QR" (ptr c_spmat_s @-> ptr c_spmat_s @-> returning (ptr_opt c_spmat_s))
+
+    let ml_eigen_simplicial_LLT = foreign "c_eigen_spmat_s_simplicial_LLT" (ptr c_spmat_s @-> ptr c_spmat_s @-> returning (ptr_opt c_spmat_s))
+
+    let ml_eigen_simplicial_LDLT = foreign "c_eigen_spmat_s_simplicial_LDLT" (ptr c_spmat_s @-> ptr c_spmat_s @-> returning (ptr_opt c_spmat_s))
+
+    let ml_eigen_conjugate_gradient = foreign "c_eigen_spmat_s_conjugate_gradient" (ptr c_spmat_s @-> ptr c_spmat_s @-> returning (ptr_opt c_spmat_s))
+
+    let ml_eigen_least_squares_conjugate_gradient = foreign "c_eigen_spmat_s_least_squares_conjugate_gradient" (ptr c_spmat_s @-> ptr c_spmat_s @-> returning (ptr_opt c_spmat_s))
+
+    let ml_eigen_BiCGSTAB = foreign "c_eigen_spmat_s_BiCGSTAB" (ptr c_spmat_s @-> ptr c_spmat_s @-> returning (ptr_opt c_spmat_s))
+
   end
 
 
@@ -425,6 +439,20 @@ module Bindings (F : Cstubs.FOREIGN) = struct
 
     let ml_eigen_print = foreign "c_eigen_spmat_d_print" (ptr c_spmat_d @-> returning void)
 
+    let ml_eigen_sparse_LU = foreign "c_eigen_spmat_d_sparse_LU" (ptr c_spmat_d @-> ptr c_spmat_d @-> returning (ptr_opt c_spmat_d))
+
+    let ml_eigen_sparse_QR = foreign "c_eigen_spmat_d_sparse_QR" (ptr c_spmat_d @-> ptr c_spmat_d @-> returning (ptr_opt c_spmat_d))
+
+    let ml_eigen_simplicial_LLT = foreign "c_eigen_spmat_d_simplicial_LLT" (ptr c_spmat_d @-> ptr c_spmat_d @-> returning (ptr_opt c_spmat_d))
+
+    let ml_eigen_simplicial_LDLT = foreign "c_eigen_spmat_d_simplicial_LDLT" (ptr c_spmat_d @-> ptr c_spmat_d @-> returning (ptr_opt c_spmat_d))
+
+    let ml_eigen_conjugate_gradient = foreign "c_eigen_spmat_d_conjugate_gradient" (ptr c_spmat_d @-> ptr c_spmat_d @-> returning (ptr_opt c_spmat_d))
+
+    let ml_eigen_least_squares_conjugate_gradient = foreign "c_eigen_spmat_d_least_squares_conjugate_gradient" (ptr c_spmat_d @-> ptr c_spmat_d @-> returning (ptr_opt c_spmat_d))
+
+    let ml_eigen_BiCGSTAB = foreign "c_eigen_spmat_d_BiCGSTAB" (ptr c_spmat_d @-> ptr c_spmat_d @-> returning (ptr_opt c_spmat_d))
+
   end
 
 
@@ -532,6 +560,20 @@ module Bindings (F : Cstubs.FOREIGN) = struct
 
     let ml_eigen_print = foreign "c_eigen_spmat_c_print" (ptr c_spmat_c @-> returning void)
 
+    let ml_eigen_sparse_LU = foreign "c_eigen_spmat_c_sparse_LU" (ptr c_spmat_c @-> ptr c_spmat_c @-> returning (ptr_opt c_spmat_c))
+
+    let ml_eigen_sparse_QR = foreign "c_eigen_spmat_c_sparse_QR" (ptr c_spmat_c @-> ptr c_spmat_c @-> returning (ptr_opt c_spmat_c))
+
+    let ml_eigen_simplicial_LLT = foreign "c_eigen_spmat_c_simplicial_LLT" (ptr c_spmat_c @-> ptr c_spmat_c @-> returning (ptr_opt c_spmat_c))
+
+    let ml_eigen_simplicial_LDLT = foreign "c_eigen_spmat_c_simplicial_LDLT" (ptr c_spmat_c @-> ptr c_spmat_c @-> returning (ptr_opt c_spmat_c))
+
+    let ml_eigen_conjugate_gradient = foreign "c_eigen_spmat_c_conjugate_gradient" (ptr c_spmat_c @-> ptr c_spmat_c @-> returning (ptr_opt c_spmat_c))
+
+    let ml_eigen_least_squares_conjugate_gradient = foreign "c_eigen_spmat_c_least_squares_conjugate_gradient" (ptr c_spmat_c @-> ptr c_spmat_c @-> returning (ptr_opt c_spmat_c))
+
+    let ml_eigen_BiCGSTAB = foreign "c_eigen_spmat_c_BiCGSTAB" (ptr c_spmat_c @-> ptr c_spmat_c @-> returning (ptr_opt c_spmat_c))
+
   end
 
 
@@ -638,6 +680,20 @@ module Bindings (F : Cstubs.FOREIGN) = struct
     let ml_eigen_sqrt = foreign "c_eigen_spmat_z_sqrt" (ptr c_spmat_z @-> returning (ptr c_spmat_z))
 
     let ml_eigen_print = foreign "c_eigen_spmat_z_print" (ptr c_spmat_z @-> returning void)
+
+    let ml_eigen_sparse_LU = foreign "c_eigen_spmat_z_sparse_LU" (ptr c_spmat_z @-> ptr c_spmat_z @-> returning (ptr_opt c_spmat_z))
+
+    let ml_eigen_sparse_QR = foreign "c_eigen_spmat_z_sparse_QR" (ptr c_spmat_z @-> ptr c_spmat_z @-> returning (ptr_opt c_spmat_z))
+
+    let ml_eigen_simplicial_LLT = foreign "c_eigen_spmat_z_simplicial_LLT" (ptr c_spmat_z @-> ptr c_spmat_z @-> returning (ptr_opt c_spmat_z))
+
+    let ml_eigen_simplicial_LDLT = foreign "c_eigen_spmat_z_simplicial_LDLT" (ptr c_spmat_z @-> ptr c_spmat_z @-> returning (ptr_opt c_spmat_z))
+
+    let ml_eigen_conjugate_gradient = foreign "c_eigen_spmat_z_conjugate_gradient" (ptr c_spmat_z @-> ptr c_spmat_z @-> returning (ptr_opt c_spmat_z))
+
+    let ml_eigen_least_squares_conjugate_gradient = foreign "c_eigen_spmat_z_least_squares_conjugate_gradient" (ptr c_spmat_z @-> ptr c_spmat_z @-> returning (ptr_opt c_spmat_z))
+
+    let ml_eigen_BiCGSTAB = foreign "c_eigen_spmat_z_BiCGSTAB" (ptr c_spmat_z @-> ptr c_spmat_z @-> returning (ptr_opt c_spmat_z))
 
   end
 

@@ -87,6 +87,13 @@ typedef int64_t INDEX;
   struct c_spmat_s* c_eigen_spmat_s_neg(struct c_spmat_s *m);
   struct c_spmat_s* c_eigen_spmat_s_sqrt(struct c_spmat_s *m);
   void c_eigen_spmat_s_print(struct c_spmat_s *m);
+  struct c_spmat_s* c_eigen_spmat_s_sparse_LU(struct c_spmat_s *a, struct c_spmat_s *b);
+  struct c_spmat_s* c_eigen_spmat_s_sparse_QR(struct c_spmat_s *a, struct c_spmat_s *b);
+  struct c_spmat_s* c_eigen_spmat_s_simplicial_LLT(struct c_spmat_s *a, struct c_spmat_s *b);
+  struct c_spmat_s* c_eigen_spmat_s_simplicial_LDLT(struct c_spmat_s *a, struct c_spmat_s *b);
+  struct c_spmat_s* c_eigen_spmat_s_conjugate_gradient(struct c_spmat_s *a, struct c_spmat_s *b);
+  struct c_spmat_s* c_eigen_spmat_s_least_squares_conjugate_gradient(struct c_spmat_s *a, struct c_spmat_s *b);
+  struct c_spmat_s* c_eigen_spmat_s_BiCGSTAB(struct c_spmat_s *a, struct c_spmat_s *b);
 
 
   /**************************** SparseMatrix_D ****************************/
@@ -147,6 +154,13 @@ typedef int64_t INDEX;
   struct c_spmat_d* c_eigen_spmat_d_neg(struct c_spmat_d *m);
   struct c_spmat_d* c_eigen_spmat_d_sqrt(struct c_spmat_d *m);
   void c_eigen_spmat_d_print(struct c_spmat_d *m);
+  struct c_spmat_d* c_eigen_spmat_d_sparse_LU(struct c_spmat_d *a, struct c_spmat_d *b);
+  struct c_spmat_d* c_eigen_spmat_d_sparse_QR(struct c_spmat_d *a, struct c_spmat_d *b);
+  struct c_spmat_d* c_eigen_spmat_d_simplicial_LLT(struct c_spmat_d *a, struct c_spmat_d *b);
+  struct c_spmat_d* c_eigen_spmat_d_simplicial_LDLT(struct c_spmat_d *a, struct c_spmat_d *b);
+  struct c_spmat_d* c_eigen_spmat_d_conjugate_gradient(struct c_spmat_d *a, struct c_spmat_d *b);
+  struct c_spmat_d* c_eigen_spmat_d_least_squares_conjugate_gradient(struct c_spmat_d *a, struct c_spmat_d *b);
+  struct c_spmat_d* c_eigen_spmat_d_BiCGSTAB(struct c_spmat_d *a, struct c_spmat_d *b);
 
 
   /**************************** SparseMatrix_C ****************************/
@@ -202,6 +216,13 @@ typedef int64_t INDEX;
   struct c_spmat_c* c_eigen_spmat_c_neg(struct c_spmat_c *m);
   struct c_spmat_c* c_eigen_spmat_c_sqrt(struct c_spmat_c *m);
   void c_eigen_spmat_c_print(struct c_spmat_c *m);
+  struct c_spmat_c* c_eigen_spmat_c_sparse_LU(struct c_spmat_c *a, struct c_spmat_c *b);
+  struct c_spmat_c* c_eigen_spmat_c_sparse_QR(struct c_spmat_c *a, struct c_spmat_c *b);
+  struct c_spmat_c* c_eigen_spmat_c_simplicial_LLT(struct c_spmat_c *a, struct c_spmat_c *b);
+  struct c_spmat_c* c_eigen_spmat_c_simplicial_LDLT(struct c_spmat_c *a, struct c_spmat_c *b);
+  struct c_spmat_c* c_eigen_spmat_c_conjugate_gradient(struct c_spmat_c *a, struct c_spmat_c *b);
+  struct c_spmat_c* c_eigen_spmat_c_least_squares_conjugate_gradient(struct c_spmat_c *a, struct c_spmat_c *b);
+  struct c_spmat_c* c_eigen_spmat_c_BiCGSTAB(struct c_spmat_c *a, struct c_spmat_c *b);
 
 
   /**************************** SparseMatrix_Z ****************************/
@@ -257,6 +278,13 @@ typedef int64_t INDEX;
   struct c_spmat_z* c_eigen_spmat_z_neg(struct c_spmat_z *m);
   struct c_spmat_z* c_eigen_spmat_z_sqrt(struct c_spmat_z *m);
   void c_eigen_spmat_z_print(struct c_spmat_z *m);
+  struct c_spmat_z* c_eigen_spmat_z_sparse_LU(struct c_spmat_z *a, struct c_spmat_z *b);
+  struct c_spmat_z* c_eigen_spmat_z_sparse_QR(struct c_spmat_z *a, struct c_spmat_z *b);
+  struct c_spmat_z* c_eigen_spmat_z_simplicial_LLT(struct c_spmat_z *a, struct c_spmat_z *b);
+  struct c_spmat_z* c_eigen_spmat_z_simplicial_LDLT(struct c_spmat_z *a, struct c_spmat_z *b);
+  struct c_spmat_z* c_eigen_spmat_z_conjugate_gradient(struct c_spmat_z *a, struct c_spmat_z *b);
+  struct c_spmat_z* c_eigen_spmat_z_least_squares_conjugate_gradient(struct c_spmat_z *a, struct c_spmat_z *b);
+  struct c_spmat_z* c_eigen_spmat_z_BiCGSTAB(struct c_spmat_z *a, struct c_spmat_z *b);
 
 
 #ifdef __cplusplus

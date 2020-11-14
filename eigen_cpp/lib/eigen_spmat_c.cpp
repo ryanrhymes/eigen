@@ -3,9 +3,13 @@
  * Copyright (c) 2016-2020 Liang Wang <liang.wang@cl.cam.ac.uk>
  */
 
+#include "sparse_solver.h"
+
 /******************** pointer conversion  ********************/
 
 typedef SparseMatrix<spmat_c_elt, Eigen::RowMajor, INDEX> spmat_c;
+typedef SparseMatrix<spmat_c_elt, Eigen::ColMajor,   int> col_major_spmat_c;
+
 
 inline spmat_c& c_to_eigen(c_spmat_c* ptr)
 {
@@ -443,4 +447,72 @@ c_spmat_c* c_eigen_spmat_c_sqrt(c_spmat_c *m)
 void c_eigen_spmat_c_print(c_spmat_c *m)
 {
   std::cout << c_to_eigen(m) << std::endl;
+}
+
+c_spmat_c* c_eigen_spmat_c_sparse_LU(c_spmat_c *c_coefficients, c_spmat_c *c_observations)
+{
+  SparseSolver<SparseLU<col_major_spmat_c>,
+               spmat_c,
+               spmat_c_elt,
+               c_spmat_c> ss(c_coefficients, c_observations);
+  return ss.solve();
+}
+
+c_spmat_c* c_eigen_spmat_c_sparse_QR(c_spmat_c *c_coefficients, c_spmat_c *c_observations)
+{
+  SparseSolver<SparseQR<col_major_spmat_c, COLAMDOrdering<int> >,
+               spmat_c,
+               spmat_c_elt,
+               c_spmat_c> ss(c_coefficients, c_observations);
+  return ss.solve();
+}
+
+c_spmat_c* c_eigen_spmat_c_simplicial_LLT(c_spmat_c *c_coefficients,
+                                          c_spmat_c *c_observations)
+{
+  SparseSolver<SimplicialLLT<col_major_spmat_c>,
+               spmat_c,
+               spmat_c_elt,
+               c_spmat_c> ss(c_coefficients, c_observations);
+  return ss.solve();
+}
+
+c_spmat_c* c_eigen_spmat_c_simplicial_LDLT(c_spmat_c *c_coefficients,
+                                           c_spmat_c *c_observations)
+{
+  SparseSolver<SimplicialLDLT<col_major_spmat_c>,
+               spmat_c,
+               spmat_c_elt,
+               c_spmat_c> ss(c_coefficients, c_observations);
+  return ss.solve();
+}
+
+c_spmat_c* c_eigen_spmat_c_conjugate_gradient(c_spmat_c *c_coefficients,
+                                              c_spmat_c *c_observations)
+{
+  SparseSolver<ConjugateGradient<col_major_spmat_c>,
+               spmat_c,
+               spmat_c_elt,
+               c_spmat_c> ss(c_coefficients, c_observations);
+  return ss.solve();
+}
+
+c_spmat_c* c_eigen_spmat_c_least_squares_conjugate_gradient(c_spmat_c *c_coefficients,
+                                                            c_spmat_c *c_observations)
+{
+  SparseSolver<LeastSquaresConjugateGradient<col_major_spmat_c>,
+               spmat_c,
+               spmat_c_elt,
+               c_spmat_c> ss(c_coefficients, c_observations);
+  return ss.solve();
+}
+
+c_spmat_c* c_eigen_spmat_c_BiCGSTAB(c_spmat_c *c_coefficients,
+                                              c_spmat_c *c_observations)
+{
+  SparseSolver<BiCGSTAB<col_major_spmat_c>,
+               spmat_c,
+               spmat_c_elt,
+               c_spmat_c> ss(c_coefficients, c_observations);
+  return ss.solve();
 }

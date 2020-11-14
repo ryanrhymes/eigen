@@ -125,3 +125,17 @@ let neg x = ml_eigen_neg x
 let sqrt x = ml_eigen_sqrt x
 
 let print x = ml_eigen_print x
+
+let sparse_LU a b = ml_eigen_sparse_LU a b
+
+let sparse_QR a b = ml_eigen_sparse_QR a b
+
+let simplicial_LLT a b = ml_eigen_simplicial_LLT a b
+
+let simplicial_LDLT a b = ml_eigen_simplicial_LDLT a b
+
+let conjugate_gradient a b = ml_eigen_conjugate_gradient a b
+
+let least_squares_conjugate_gradient a b = ml_eigen_least_squares_conjugate_gradient a b
+
+let biCGSTAB a b = ml_eigen_BiCGSTAB a b
